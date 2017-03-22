@@ -29,6 +29,7 @@
     background: #f5f5f5;
     padding: 10px 5px;
     width: 100%;
+    box-sizing: border-box;
   }
   .search .search-btn {
     width: 20px;
@@ -45,6 +46,8 @@
     line-height: 46px;
     text-align: center;
     border-bottom: 1px solid #f3f3f3;
+    background: white;
+    z-index: 111;
   }
   .header a {
     text-decoration: none;
