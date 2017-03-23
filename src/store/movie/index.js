@@ -17,9 +17,9 @@ const actions = {
       return context.commit('error', error);
     })
   },
-  [types.FETCH_MOVIE_SEARCH] (context, payload) {
+  [types.FETCH_MOVIE_SEARCH] (context, query) {
     context.commit('clear');
-    fetchSearchMovies(payload.query).then(data => {
+    fetchSearchMovies(query).then(data => {
       return context.commit(types.FETCH_MOVIE_SEARCH, data);
     }, error => {
       return context.commit('error', error);

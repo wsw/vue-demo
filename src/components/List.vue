@@ -7,19 +7,23 @@
 </template>
 
 <script>
-  // import { mapMutations } from 'vuex';
+  import { mapState } from 'vuex';
   import Spinner from './Spinner';
 
   export default {
     name: 'list',
-    computed: {
-      movie () {
-        return this.$store.state.movie.movie;
-      },
-      loading () {
-        return this.$store.state.movie.loading
-      }
-    },
+    // computed: {
+    //   movie () {
+    //     return this.$store.state.movie.movie;
+    //   },
+    //   loading () {
+    //     return this.$store.state.movie.loading
+    //   }
+    // },
+    computed: mapState({
+      movie: state => state.movie.movie,
+      loading: state => state.movie.loading
+    }),
     components: {
       Spinner
     }
