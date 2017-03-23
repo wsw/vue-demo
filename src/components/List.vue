@@ -8,7 +8,6 @@
 
 <script>
   // import { mapMutations } from 'vuex';
-  import * as types from '../store/movie/types';
   import Spinner from './Spinner';
 
   export default {
@@ -20,9 +19,6 @@
       loading () {
         return this.$store.state.movie.loading
       }
-    },
-    mounted () {
-      this.$store.dispatch(types.FETCH_MOVIES);
     },
     components: {
       Spinner

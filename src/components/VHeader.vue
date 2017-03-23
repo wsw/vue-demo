@@ -4,15 +4,27 @@
       <a href="#/movies">电影</a>
     </header>
     <div class="search">
-      <input type="text" class="search-input" placeholder="请输入搜索内容" />
-      <img class="search-btn" src="../assets/search-btn.png" alt="">
+      <input type="text" @keyup.13="onSearch" v-model="query" class="search-input" placeholder="请输入搜索内容" />
+      <img class="search-btn" @click="onSearch" src="../assets/search-btn.png" alt="">
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'header'
+    name: 'header',
+    data () {
+      return {
+        query: ''
+      }
+    },
+    methods: {
+      onSearch () {
+        if (this.query) {
+          this.$emit('search', this.query);
+        }
+      }
+    }
   }
 </script>
 
